@@ -94,6 +94,14 @@ export default function Home() {
         <section className="deck-slide" key={slide.id}>
           <h1>{slide.title}</h1>
 
+          {slide.image && (
+            <img
+              src={slide.image.src}
+              alt={slide.image.alt}
+              className="deck-diagram"
+            />
+          )}
+
           {slide.sections.map((sec, i) => (
             <div key={sec.heading ?? i} className="deck-section">
               {sec.heading && <h2>{sec.heading}</h2>}

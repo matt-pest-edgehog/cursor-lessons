@@ -12,6 +12,7 @@ export type Slide = {
   id: string;
   kicker: string;
   title: string;
+  image?: { src: string; alt: string };
   sections: SlideSection[];
   citations: SlideCitation[];
 };
@@ -71,6 +72,7 @@ export const slides: Slide[] = [
     id: "embeddings",
     kicker: "Core Concept",
     title: "Embeddings: How Cursor Understands Your Codebase",
+    image: { src: "/diagrams/embeddings-pipeline.png", alt: "Cursor embedding and indexing pipeline diagram" },
     sections: [
       {
         heading: "What are embeddings?",
@@ -106,6 +108,7 @@ export const slides: Slide[] = [
     id: "context-window",
     kicker: "Core Concept",
     title: "Context Window: Your Token Budget",
+    image: { src: "/diagrams/context-assembly.png", alt: "Cursor context assembly pipeline diagram" },
     sections: [
       {
         heading: "How context is assembled",
@@ -359,6 +362,7 @@ export const slides: Slide[] = [
     id: "mcp-technical",
     kicker: "MCP",
     title: "MCP: Technical Architecture",
+    image: { src: "/diagrams/mcp-architecture.png", alt: "MCP client-host-server architecture diagram" },
     sections: [
       {
         heading: "Client-Host-Server model",
@@ -397,6 +401,7 @@ export const slides: Slide[] = [
     id: "model-selection",
     kicker: "Practical Guide",
     title: "Model Selection: When to Pay Up",
+    image: { src: "/diagrams/model-selection.png", alt: "Cursor model selection comparison chart" },
     sections: [
       {
         heading: "Claude Opus 4.6 variants",
@@ -596,6 +601,7 @@ export const slides: Slide[] = [
     id: "workflow-loop",
     kicker: "Execution Pattern",
     title: "The High-Leverage Cursor Loop",
+    image: { src: "/diagrams/workflow-loop.png", alt: "5-step Cursor workflow loop diagram" },
     sections: [
       {
         heading: "The 5-step loop",
