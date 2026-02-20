@@ -1,11 +1,12 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 
 type EdgehogLogoProps = {
   className?: string;
   staticMode?: boolean;
   variant?: "full" | "icon";
+  theme?: "light" | "dark";
 };
 
 const SPIKE_DIRECTIONS = [
@@ -38,26 +39,18 @@ export function EdgehogLogo({
   className = "",
   staticMode = false,
   variant = "full",
+  theme,
 }: EdgehogLogoProps) {
   const [hovered, setHovered] = useState(false);
   const [winking, setWinking] = useState(false);
-  const [isDark, setIsDark] = useState(true);
   const spikeOffset = 8;
   const springEasing = "cubic-bezier(0.34, 1.56, 0.64, 1)";
   const viewBox = variant === "icon" ? "-10 -10 120 110" : "-24 -24 242 202";
-  const fillColor = isDark ? "#ffffff" : "#1a1a1a";
+  const fillColor = theme === "light" ? "#1a1a1a" : "#ffffff";
 
   const triggerWink = useCallback(() => {
     setWinking(true);
     setTimeout(() => setWinking(false), 240);
-  }, []);
-
-  useEffect(() => {
-    const media = window.matchMedia("(prefers-color-scheme: dark)");
-    const onChange = () => setIsDark(media.matches);
-    onChange();
-    media.addEventListener("change", onChange);
-    return () => media.removeEventListener("change", onChange);
   }, []);
 
   return (
