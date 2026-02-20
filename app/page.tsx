@@ -19,7 +19,7 @@ export default function Home() {
       <div className="deck-noise" />
       <main className="deck-main">
         <header className="deck-header">
-          <EdgehogLogo className="deck-logo" />
+          <EdgehogLogo className="deck-logo" variant="full" />
           <div className="deck-meta">
             <span>{slide.kicker}</span>
             <span>
